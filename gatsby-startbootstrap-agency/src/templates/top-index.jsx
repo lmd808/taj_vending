@@ -38,7 +38,6 @@ export const query = graphql`
             href
             imageFileName
           }
-          content
           copyright
           header
           email
@@ -62,37 +61,12 @@ export const query = graphql`
             iconName
             imageFileName
           }
-          social {
-            facebook
-            github
-            linkedin
-            medium
-            twitter
-          }
-          subheader
-          teamMember {
-            header
-            imageFileName
-            social {
-              facebook
-              github
-              linkedin
-              medium
-              twitter
-            }
-            subheader
-          }
+
           telephone
           termsHref
           termsText
           title
-          timeline {
-            content
-            header
-            imageContent
-            imageFileName
-            subheader
-          }
+          
         }
         fields {
           fileName

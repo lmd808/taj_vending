@@ -13,7 +13,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "bootstrap": "^4.4.1",
     "clsx": "^1.1.0",
-    "gatsby": "^2.20.22",
+    "gatsby": "^2.32.12",
     "gatsby-cli": "^2.17.0",
     "gatsby-image": "^2.3.2",
     "gatsby-omni-font-loader": "^1.1.1",
@@ -79,7 +79,6 @@
     "url": "git+https://github.com/thundermiracle/gatsby-startbootstrap-agency.git"
   },
   "scripts": {
-    
     "clean": "gatsby clean",
     "build": "gatsby build",
     "dev": "gatsby develop",
