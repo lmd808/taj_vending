@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Modal, Button } from "react-bootstrap";
-import Image from "components/Image";
 import Icon from "./Icon";
 
-const PortfolioDetailDialog = ({
+const QuoteDetailDialog = ({
   onHide,
   imageFileName,
   imageAlt,
@@ -26,21 +25,22 @@ const PortfolioDetailDialog = ({
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">{header}</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="mx-auto">
-        <p className="item-intro text-muted">{subheader}</p>
-        <Image
-          className="img-fluid d-block"
-          fileName={imageFileName}
-          alt={imageAlt || header || subheader}
-        />
-        <p>{content}</p>
-        {extraInfo}
-      </Modal.Body>
+      <Modal.Body className="mx-auto">  
+         <form name="contact" method="POST" data-netlify="true">
+            <p>
+              <label htmlFor="name">Your Name: <input id="name" type="text" name="name" /></label>   
+            </p>
+            <p>
+              <button type="submit">Send</button>
+            </p>
+          </form>
+      
+             </Modal.Body>
       <Modal.Footer>
         <div className="mx-auto">
           <Button variant="primary" onClick={onHide}>
             <Icon iconName="CloseIcon" />
-            &nbsp; Close Project
+            &nbsp; Exit Quote
           </Button>
         </div>
       </Modal.Footer>
@@ -48,7 +48,7 @@ const PortfolioDetailDialog = ({
   );
 };
 
-PortfolioDetailDialog.propTypes = {
+QuoteDetailDialog.propTypes = {
   onHide: PropTypes.func,
   imageFileName: PropTypes.string,
   imageAlt: PropTypes.string,
@@ -58,7 +58,7 @@ PortfolioDetailDialog.propTypes = {
   extraInfo: PropTypes.any,
 };
 
-PortfolioDetailDialog.defaultProps = {
+QuoteDetailDialog.defaultProps = {
   onHide: null,
   imageFileName: "",
   imageAlt: null,
@@ -68,4 +68,4 @@ PortfolioDetailDialog.defaultProps = {
   extraInfo: null,
 };
 
-export default PortfolioDetailDialog;
+export default QuoteDetailDialog;
