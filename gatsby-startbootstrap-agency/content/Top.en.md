@@ -1,7 +1,7 @@
 ---
 header: "Taj Vending Services"
-subheader: "Fueling your success. "
-imageFileName: "header-bg.jpg"
-jumpToAnchor: "Services"
-jumpToAnchorText: null
+subheader: "Fueling your success."
+imageFileName: "header-bg.mp4"
+jumpToAnchor: "Quote"
+jumpToAnchorText: "Get a Quote"
 ---

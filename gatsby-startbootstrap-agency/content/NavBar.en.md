@@ -1,4 +1,4 @@
 ---
-brand: "Taj Vending"
-menuText: "Menu "
+brand: "Taj Vending Services"
+menuText: "Menu"
 ---
