@@ -4,7 +4,7 @@ import React from 'react'
 const quote = () => {
     return (
         <div>
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true" contentType= 'application/x-www-form-urlencoded'>
                 <p>
                     <label htmlFor='name'>Your Name: <input id='name' type="text" name="name" /></label>   
                 </p>
