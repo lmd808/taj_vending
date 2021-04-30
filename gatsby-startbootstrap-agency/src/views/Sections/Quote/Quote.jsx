@@ -25,7 +25,7 @@ const Quote = ({ className, frontmatter }) => {
 
   return (
     
-    <PageSection className={clsx("portfolio-section", className)} id={anchor}>
+    <PageSection className={clsx("quote", className)} id={anchor}>
       <> 
       <Row>
       <a

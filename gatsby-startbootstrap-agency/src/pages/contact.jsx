@@ -1,5 +1,8 @@
 import React from 'react'
 import { navigate } from 'gatsby'
+import Navbar from "../views/Navbar";
+import Top from "../views/Top";
+import Footer from "../views/Footer";
 
 function encode(data) {
   return Object.keys(data)
@@ -31,6 +34,8 @@ export default function Contact() {
 
   return (
     <div>
+      <Navbar/>
+      <Top/>
       <h1>Contact</h1>
       <form
         name="contact"
@@ -47,31 +52,66 @@ export default function Contact() {
             Don’t fill this out: <input name="bot-field" onChange={handleChange} />
           </label>
         </p>
+        
+          <h6>Which Services are you interested in?</h6>
+          <p>
+          <input type="checkbox" id="snack" name="snack" value="Snack Services"/>
+          <label htmlFor="snack"> Snack Services</label>
+          <br/>
+          <input type="checkbox" id="drink" name="drink" value="Drink Services "/>
+          <label htmlFor="drink"> Drink Services</label>
+          <br/>
+          <input type="checkbox" id="coffee" name="coffee"  value="Coffee Services"/>
+          <label htmlFor="coffee"> Coffee Services</label>
+          </p>
+          <br/>
+          <h6>Do you have multiple locations?</h6>
+          <p>
+           <input type="checkbox" id="yesMulti" name="yes" value="yes"/>
+           <label htmlFor="yesMulti">Yes</label> 
+           <input type="checkbox" id="noSingular" name="no" value="no"/>
+           <label htmlFor="noSingular">no</label> 
+           </p>
+           <br/>
+          <h6>Name and Organization:</h6>
+          <p>
+          <label>
+            Name:
+            <input type="text" name="First Name" placeholder="First Name" onChange={handleChange} />
+            <input type="text" name="Last Name" placeholder="Last Name" onChange={handleChange} />
+            <br/>
+          </label>
+          <label>
+            Organization: <input type="text" name= "organization" placeholder= "Organization" onChange={handleChange}/>
+          </label>
+          </p>
+          <br/>
+      <h6>Contact Info</h6> 
         <p>
           <label>
-            Your name:
-            <br />
-            <input type="text" name="name" onChange={handleChange} />
+            Email Address: 
+            <input type="email" name="email" placeholder="Jane@tajvending.com" onChange={handleChange} />
+          </label>
+          <br/>
+          <label>
+            Phone Number*
+          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onChange={handleChange} />
+          <small><em>All calls and Emails will be responded to withing 24 hours!</em></small>
+          </label>
+
+        </p>
+        <br/>
+        <h6>How can we help you?</h6>
+        <p>
+          <label>
+            <textarea name="message" placeholder="Type here..." onChange={handleChange} />
           </label>
         </p>
         <p>
-          <label>
-            Your email:
-            <br />
-            <input type="email" name="email" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message:
-            <br />
-            <textarea name="message" onChange={handleChange} />
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
+          <button type="submit">Submit</button>
         </p>
       </form>
+      <Footer/>
     </div>
   )
 }

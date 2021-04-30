@@ -19,12 +19,16 @@ const PortfolioItem = ({
   extraInfo,
 }) => {
   const [showDetail, setShowDetail] = React.useState(false);
-  const handleShowDetail = React.useCallback(() => {
-    setShowDetail(true);
-  }, []);
+  
   const handleHideDetail = React.useCallback(() => {
     setShowDetail(false);
   }, []);
+  
+  const handleShowDetail = React.useCallback(() => {
+    setShowDetail(true);
+  }, []);
+  
+
 
   return (
     <>

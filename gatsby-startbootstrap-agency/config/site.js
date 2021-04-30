@@ -1,21 +1,17 @@
 module.exports = {
-  title: "Gatsyby Startbootstrap Agency",
-  keywords: [
-    "gatsby",
-    "gatsbyjs",
-    "landing page",
-    "landing",
-    "i18n",
-    "eslint",
-    "bootstrap",
-    "startbootstrap-agency",
+  title: "Taj Vending Services",
+  "keywords": [
+    "vending",
+    "coffee",
+    "office snacks",
+    "vending services",
+    "food",
+    "taj vending",
+    "vending machine",
+    "food services"
   ],
-  description: "gatsby version of startbootstrap-agency with i18n support.",
-  author: "thundermiracle",
-  trackingId: "UA-119418003-5",
+  description: "The Taj Vending offical website",
+  author: "Laura DiTommaso",
+  trackingId: "G-GTSG2RNC0K",
   defaultLang: "en",
-  langTextMap: {
-    en: "English",
-    ja: "日本語",
-  },
 };

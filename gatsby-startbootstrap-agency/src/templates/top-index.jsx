@@ -43,14 +43,6 @@ export const query = graphql`
           jumpToAnchor
           jumpToAnchorText
           menuText
-          quoteForm {
-            content
-            extraInfo
-            header
-            subheader
-            imageFileNameDetail
-            imageFileName
-          }
           privacyHref
           privacyText
           services {
@@ -59,7 +51,9 @@ export const query = graphql`
             iconName
             imageFileName
           }
-
+          getStarted{
+            href
+          }
           telephone
           termsHref
           termsText

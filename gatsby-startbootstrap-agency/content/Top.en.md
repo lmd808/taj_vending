@@ -2,6 +2,6 @@
 header: "Taj Vending Services"
 subheader: "Fueling your success."
 imageFileName: "header-bg.mp4"
-jumpToAnchor: "Quote"
-jumpToAnchorText: "Get a Quote"
+jumpToAnchor: "Get Started"
+jumpToAnchorText: "Get started with a quote"
 ---
