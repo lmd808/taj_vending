@@ -1,0 +1,50 @@
+@-webkit-keyframes bounce {
+    0% { transform: translateY(-5px)  }
+    50% { transform: translateY(10px) }
+    100% { transform: translateY(-5px) }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(-5px)  }
+    50% { transform: translateY(10px) }
+    100% { transform: translateY(-5px) }
+}
+
+#bounce {
+    width: 400px;
+    height: 400px;
+    background-color: #42413D;
+    border-radius: 100%;
+    margin: 0% auto;
+    
+    -webkit-animation: bounce 3s infinite ease-in-out;
+    -o-animation: bounce 3s infinite ease-in-out;
+    -ms-animation: bounce 3s infinite ease-in-out; 
+    -moz-animation: bounce 3s infinite ease-in-out; 
+    animation: bounce 3s infinite ease-in-out;
+}
+
+.linkToModal{
+    text-decoration: none;
+    position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.linkToModal:hover {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 500px) {
+    #bounce {
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+    }
+
+    .linkToModal{
+        font-size: x-small;
+    }
+    
+  }
+  

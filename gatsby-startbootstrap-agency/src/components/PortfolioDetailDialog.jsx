@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { navigate } from 'gatsby'
 import { Modal, Button } from "react-bootstrap";
-import Icon from "./Icon";
 
 
 function encode(data) {
@@ -33,7 +31,7 @@ const QuoteDetailDialog = ({
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => onHide())
       .catch((error) => alert(error))
   }
   return (
@@ -92,6 +90,7 @@ const QuoteDetailDialog = ({
             <input type="text" name="Last Name" placeholder="Last Name" onChange={handleChange} />
             <br/>
           </label>
+          <br/>
           <label>
             Organization: <input type="text" name= "organization" placeholder= "Organization" onChange={handleChange}/>
           </label>

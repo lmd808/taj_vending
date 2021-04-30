@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Row, Col } from "react-bootstrap";
 import PageSection from "components/PageSection";
 import PortfolioDetailDialog from "components/PortfolioDetailDialog";
+import './GetStarted.scss'
 
 function encode(data) {
     return Object.keys(data)
@@ -23,25 +24,30 @@ const GetStarted = ({ className, frontmatter }) => {
     
     
     return (
+
         <PageSection className={className} id={anchor}>
-            <Row className="justify-content-center">
-                <Col lg={8} className="text-center">
+            <div id="bounce" className="particleContainer">
                 <a
-                role="button"
-                tabIndex={-1}
-                className="portfolio-link"
-                data-toggle="modal"
-                onClick={handleShowDetail}>
+                    role="button"
+                    tabIndex={-1}
+                    className="linkToModal"
+                    data-toggle="modal"
+                    onClick={handleShowDetail}>
+                <Row className="justify-content-center">
+                    <Col lg={8} className="text-center">
                     <h1 className="mt-0">{header}</h1>
                     <h2 className="mt-0">Let us know what you need!</h2>
+                    
+                    </Col>
+                </Row>
                 </a>
-                </Col>
-            </Row>
-            <PortfolioDetailDialog
-            show={showDetail}
-            onHide={handleHideDetail}
-        />
-        </PageSection>    
+                <PortfolioDetailDialog
+                show={showDetail}
+                onHide={handleHideDetail}
+            />
+        </div>
+        </PageSection>  
+        
       
       
     )
