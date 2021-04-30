@@ -6,7 +6,7 @@ const quote = () => {
         <div>
               <form
                   method="post"
-                  name="contact-form"
+                  name="contact"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
                   action="/thanks"
