@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import clsx from "clsx";
 
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Row } from "react-bootstrap";
 
 import useWindowOnScroll from "hooks/useWindowOnScroll";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
@@ -59,6 +59,13 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
           </Nav>
           {extraItems}
         </Navbar.Collapse>
+        <br/>
+            <Row
+            className="nav-link text-center"
+            smooth="easeInOutQuart"
+          >
+            <a  href= "tel:9734458993" className="text-center text-uppercase"><Icon className="phoneIcon" iconName="PhoneIcon" size="lg" color= 'rgba(255, 255, 255, 0.5)'/>  Call Now!  </a>
+          </Row>
       </Container>
     </Navbar>
   );

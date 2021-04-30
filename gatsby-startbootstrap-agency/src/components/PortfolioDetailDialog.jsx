@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Row, Col } from "react-bootstrap";
+
+import './portfoliodetaildialog.scss'
+
 
 
 function encode(data) {
@@ -8,7 +11,6 @@ function encode(data) {
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
-
 
 const QuoteDetailDialog = ({
   onHide,
@@ -18,6 +20,16 @@ const QuoteDetailDialog = ({
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
+  }
+
+  const thankYou = ()=> {
+    console.log('thank you')
+    return(
+      <Modal>
+        <h1>Thank you!</h1>
+        <button type= "button" onClick={onHide}>Close</button>
+      </Modal>
+    )
   }
 
   const handleSubmit = (e) => {
@@ -31,8 +43,8 @@ const QuoteDetailDialog = ({
         ...state,
       }),
     })
-      .then(() => onHide())
-      .catch((error) => alert(error))
+      .then(() => thankYou())
+      .catch((error) => error)
   }
   return (
     <Modal
@@ -43,9 +55,18 @@ const QuoteDetailDialog = ({
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Contact </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Get Started with a Quote: </Modal.Title>
       </Modal.Header>
       <Modal.Body className="mx-auto">  
+      <Row className= "text-center">
+        <Col/>
+        <Col sm={10}>
+        <Row><span><em>To begin a quote, fill out the form below and press send. It is that easy! We look forward to hearing from you.</em></span>
+        </Row>
+        </Col>
+        <Col/>
+      </Row>
+      <hr/>
       <form
         name="contact"
         method="post"
@@ -63,68 +84,71 @@ const QuoteDetailDialog = ({
         </p>
         
           <h6>Which Services are you interested in?</h6>
-          <p>
-          <input type="checkbox" id="snack" name="snack" value="Snack Services"/>
-          <label htmlFor="snack"> Snack Services</label>
-          <br/>
-          <input type="checkbox" id="drink" name="drink" value="Drink Services "/>
-          <label htmlFor="drink"> Drink Services</label>
-          <br/>
-          <input type="checkbox" id="coffee" name="coffee"  value="Coffee Services"/>
-          <label htmlFor="coffee"> Coffee Services</label>
-          </p>
-          <br/>
-          <h6>Do you have multiple locations?</h6>
-          <p>
-           <input type="checkbox" id="yesMulti" name="yes" value="yes"/>
-           <label htmlFor="yesMulti">Yes</label> 
-           <input type="checkbox" id="noSingular" name="no" value="no"/>
-           <label htmlFor="noSingular">no</label> 
-           </p>
-           <br/>
-          <h6>Name and Organization:</h6>
-          <p>
-          <label>
-            Name:
-            <input type="text" name="First Name" placeholder="First Name" onChange={handleChange} />
-            <input type="text" name="Last Name" placeholder="Last Name" onChange={handleChange} />
-            <br/>
-          </label>
-          <br/>
-          <label>
-            Organization: <input type="text" name= "organization" placeholder= "Organization" onChange={handleChange}/>
-          </label>
-          </p>
-          <br/>
-      <h6>Contact Info</h6> 
-        <p>
-          <label>
-            Email Address: 
-            <input type="email" name="email" placeholder="Jane@tajvending.com" onChange={handleChange} />
-          </label>
-          <br/>
-          <label>
-            Phone Number*
-          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onChange={handleChange} />
-          </label>
+          <ul>
+            <li><label htmlFor="snack">
+          <input type="checkbox" className="check-box" id="snack" name="snack" value="Snack Services"/>
+           Snack Services</label></li>
+           <li>
+           <label htmlFor="drink"> 
+          <input type="checkbox" className="check-box" id="drink" name="drink" value="Drink Services "/>
+          Drink Services</label>
+           </li>
+           <li>
+          <label htmlFor="coffee">
+          <input type="checkbox" className="check-box" id="coffee" name="coffee"  value="Coffee Services"/>
+           Coffee Services</label>
+           </li>
+          </ul>
 
-        </p>
-        <br/>
+          <h6>Do you have multiple locations?</h6>
+          <ul>
+           <li>
+           <label htmlFor="yesMulti">
+           <input type="checkbox" className="check-box" id="yesMulti" name="yes" value="yes"/>
+           Yes</label> 
+           </li>
+           <li>
+           <label htmlFor="noSingular">
+           <input type="checkbox" className="check-box inlineBox" id="noSingular" name="no" value="no"/>
+           No</label> 
+           </li>
+           </ul>
+           <hr/>
+           <h6>Contact Information: </h6>
+          <label className='form-input'>
+            First Name:
+          <input type="text" name="First Name" placeholder="Jane" className="form-input-size" onChange={handleChange} />
+          </label>
+          <label className="form-input">
+            Last Name:
+            <input type="text" name="Last Name" placeholder="Doe" className="form-input-size" onChange={handleChange} />
+          </label>
+           <label className='form-input'>
+             Organization (Optional):
+          <input type="text" name= "organization" placeholder= "Taj Vending" className="form-input-size" onChange={handleChange}/>
+          </label>
+          <label className= "form-input">
+            Email Address: 
+            <input type="email" name="email" placeholder="Jane@tajvending.com" className= "form-input-size" onChange={handleChange} />
+          </label>
+          <label className= "form-input">
+            Phone Number: 
+          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-input-size" onChange={handleChange} />
+          </label>
+       <hr/>
         <h6>How can we help you?</h6>
-        <p>
           <label>
             <textarea name="message" placeholder="Type here..." onChange={handleChange} />
           </label>
-        </p>
-        <p>
+        <div>
           <Button type="submit" variant="primary">Submit</Button>
-        </p>
+        </div>
       </form>
       
       </Modal.Body>
       <Modal.Footer>
         <div className="mx-auto">
-        <small><em>All calls and Emails will be responded to within 24 hours.</em></small>
+        <small><em>All calls and emails will receive a response within 24 hours.</em></small>
         </div>
       </Modal.Footer>
     </Modal>

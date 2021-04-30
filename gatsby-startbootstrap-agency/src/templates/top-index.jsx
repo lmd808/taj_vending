@@ -32,10 +32,6 @@ export const query = graphql`
         frontmatter {
           brand
           anchor
-          clients {
-            href
-            imageFileName
-          }
           copyright
           header
           email
@@ -49,10 +45,6 @@ export const query = graphql`
             content
             header
             iconName
-            imageFileName
-          }
-          getStarted{
-            href
           }
           telephone
           termsHref
