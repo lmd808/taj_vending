@@ -50,14 +50,14 @@ function Quote () {
           </p>
           <p>
             <label>
-              Your name:
+              Name:
               <br />
               <input type="text" name="name" onChange={handleChange} />
             </label>
           </p>
           <p>
             <label>
-              Your email:
+              Email:
               <br />
               <input type="email" name="email" onChange={handleChange} />
             </label>
