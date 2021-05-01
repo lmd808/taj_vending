@@ -15,6 +15,7 @@ function encode(data) {
 const QuoteDetailDialog = ({
   onHide,
   ...restProps
+
 }) => {
   const [state, setState] = React.useState({})
 
@@ -23,13 +24,8 @@ const QuoteDetailDialog = ({
   }
 
   const thankYou = ()=> {
-    console.log('thank you')
-    return(
-      <Modal>
-        <h1>Thank you!</h1>
-        <button type= "button" onClick={onHide}>Close</button>
-      </Modal>
-    )
+    console.log('Success! Thank You!')
+    onHide()
   }
 
   const handleSubmit = (e) => {
@@ -46,7 +42,8 @@ const QuoteDetailDialog = ({
       .then(() => thankYou())
       .catch((error) => error)
   }
-  return (
+
+   return (
     <Modal
       {...restProps}
       onHide={onHide}
@@ -61,7 +58,7 @@ const QuoteDetailDialog = ({
       <Row className= "text-center">
         <Col/>
         <Col sm={10}>
-        <Row><span><em>To begin a quote, fill out the form below and press send. It is that easy! We look forward to hearing from you.</em></span>
+        <Row><span><em>To begin a quote, fill out the form below and press submit. It is that easy! We look forward to hearing from you.</em></span>
         </Row>
         </Col>
         <Col/>
@@ -87,34 +84,34 @@ const QuoteDetailDialog = ({
           <ul>
             <li><label htmlFor="snack">
           <input type="checkbox" className="check-box" id="snack" name="snack" value="Snack Services"/>
-           Snack Services</label></li>
-           <li>
-           <label htmlFor="drink"> 
+          Snack Services</label></li>
+          <li>
+          <label htmlFor="drink"> 
           <input type="checkbox" className="check-box" id="drink" name="drink" value="Drink Services "/>
           Drink Services</label>
-           </li>
-           <li>
+          </li>
+          <li>
           <label htmlFor="coffee">
           <input type="checkbox" className="check-box" id="coffee" name="coffee"  value="Coffee Services"/>
-           Coffee Services</label>
-           </li>
+          Coffee Services</label>
+          </li>
           </ul>
 
           <h6>Do you have multiple locations?</h6>
           <ul>
-           <li>
-           <label htmlFor="yesMulti">
-           <input type="checkbox" className="check-box" id="yesMulti" name="yes" value="yes"/>
-           Yes</label> 
-           </li>
-           <li>
-           <label htmlFor="noSingular">
-           <input type="checkbox" className="check-box inlineBox" id="noSingular" name="no" value="no"/>
-           No</label> 
-           </li>
-           </ul>
-           <hr/>
-           <h6>Contact Information: </h6>
+          <li>
+          <label htmlFor="yesMulti">
+          <input type="checkbox" className="check-box" id="yesMulti" name="yes" value="yes"/>
+          Yes</label> 
+          </li>
+          <li>
+          <label htmlFor="noSingular">
+          <input type="checkbox" className="check-box inlineBox" id="noSingular" name="no" value="no"/>
+          No</label> 
+          </li>
+          </ul>
+          <hr/>
+          <h6>Contact Information: </h6>
           <label className='form-input'>
             First Name:
           <input type="text" name="First Name" placeholder="Jane" className="form-input-size" onChange={handleChange} required />
@@ -123,8 +120,8 @@ const QuoteDetailDialog = ({
             Last Name:
             <input type="text" name="Last Name" placeholder="Doe" className="form-input-size" onChange={handleChange} required />
           </label>
-           <label className='form-input'>
-             Organization (Optional):
+          <label className='form-input'>
+            Organization (Optional):
           <input type="text" name= "organization" placeholder= "Taj Vending" className="form-input-size" onChange={handleChange} required/>
           </label>
           <label className= "form-input">
@@ -132,10 +129,10 @@ const QuoteDetailDialog = ({
             <input type="email" name="email" placeholder="Jane@tajvending.com" className= "form-input-size" onChange={handleChange} required/>
           </label>
           <label className= "form-input">
-            Phone Number: 
-          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-input-size" onChange={handleChange} required/>
+            Phone Number: (No Dashes) 
+          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}" className="form-input-size" onChange={handleChange} required/>
           </label>
-       <hr/>
+      <hr/>
         <h6>How can we help you?</h6>
           <label>
             <textarea name="message" placeholder="Type here..." onChange={handleChange} />
@@ -152,11 +149,11 @@ const QuoteDetailDialog = ({
         </div>
       </Modal.Footer>
     </Modal>
-  );
+  ) 
 };
 
 QuoteDetailDialog.propTypes = {
-  onHide: PropTypes.func,
+  onHide: PropTypes.func
 };
 
 QuoteDetailDialog.defaultProps = {
