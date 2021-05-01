@@ -34,6 +34,7 @@ export const query = graphql`
           anchor
           copyright
           header
+          subheader
           email
           imageFileName
           jumpToAnchor

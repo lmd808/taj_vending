@@ -22,6 +22,16 @@
     }
   }
 }
+#phone-call-icon{
+  text-decoration: none;
+  &.active,
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($primary, 10%);
+    text-decoration: none;
+  }
+}
 @media (min-width: 992px) {
   .navbar-root {
     padding-top: 25px;

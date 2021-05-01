@@ -117,23 +117,23 @@ const QuoteDetailDialog = ({
            <h6>Contact Information: </h6>
           <label className='form-input'>
             First Name:
-          <input type="text" name="First Name" placeholder="Jane" className="form-input-size" onChange={handleChange} />
+          <input type="text" name="First Name" placeholder="Jane" className="form-input-size" onChange={handleChange} required />
           </label>
           <label className="form-input">
             Last Name:
-            <input type="text" name="Last Name" placeholder="Doe" className="form-input-size" onChange={handleChange} />
+            <input type="text" name="Last Name" placeholder="Doe" className="form-input-size" onChange={handleChange} required />
           </label>
            <label className='form-input'>
              Organization (Optional):
-          <input type="text" name= "organization" placeholder= "Taj Vending" className="form-input-size" onChange={handleChange}/>
+          <input type="text" name= "organization" placeholder= "Taj Vending" className="form-input-size" onChange={handleChange} required/>
           </label>
           <label className= "form-input">
             Email Address: 
-            <input type="email" name="email" placeholder="Jane@tajvending.com" className= "form-input-size" onChange={handleChange} />
+            <input type="email" name="email" placeholder="Jane@tajvending.com" className= "form-input-size" onChange={handleChange} required/>
           </label>
           <label className= "form-input">
             Phone Number: 
-          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-input-size" onChange={handleChange} />
+          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-input-size" onChange={handleChange} required/>
           </label>
        <hr/>
         <h6>How can we help you?</h6>

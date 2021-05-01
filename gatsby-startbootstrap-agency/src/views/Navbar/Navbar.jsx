@@ -64,7 +64,7 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
             className="nav-link text-center"
             smooth="easeInOutQuart"
           >
-            <a  href= "tel:9734458993" className="text-center text-uppercase"><Icon className="phoneIcon" iconName="PhoneIcon" size="lg" color= 'rgba(255, 255, 255, 0.5)'/>  Call Now!  </a>
+            <a  href= "tel:6092408310" className="text-center text-uppercase" id='phone-call-icon'><Icon className="phoneIcon" iconName="PhoneIcon" size="lg" color= 'rgba(255, 255, 255, 0.5)'/>  Call Now!  </a>
           </Row>
       </Container>
     </Navbar>
