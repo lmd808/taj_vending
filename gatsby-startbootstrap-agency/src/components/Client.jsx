@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import Image from "components/Image";
 
-const Client = ({ imageFileName, href }) => {
+const Client = ({ imageFileName, href, imageAlt}) => {
   const imgPart = (
-    <Image className="img-fluid d-block mx-auto" fileName={imageFileName} alt={imageFileName} />
+    <Image className="img-fluid d-block mx-auto" fileName={imageFileName} alt={imageAlt} />
   );
 
   if (href) {
@@ -21,6 +21,7 @@ const Client = ({ imageFileName, href }) => {
 
 Client.propTypes = {
   imageFileName: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string,
   href: PropTypes.string,
 };
 

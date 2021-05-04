@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
 const Image = ({ fileName, alt, ...restProps }) => (
+
   <StaticQuery
     query={graphql`
       query ImageQuery {
@@ -31,7 +32,7 @@ const Image = ({ fileName, alt, ...restProps }) => (
       }
 
       const imageSizes = image.node.childImageSharp.sizes;
-      return <Img alt={alt} sizes={imageSizes} {...restProps} />;
+      return <Img alt={alt} fluid={imageSizes} {...restProps} />;
     }}
   />
 );

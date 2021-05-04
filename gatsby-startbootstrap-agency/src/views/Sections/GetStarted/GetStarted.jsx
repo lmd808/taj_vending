@@ -29,8 +29,8 @@ const GetStarted = ({ className, frontmatter }) => {
                     onClick={handleShowDetail}>
                 <Row className="justify-content-center text center">
                     
-                    <h1 className="mt-0">{header}</h1>
-                    <h3 className="mt-0">Click and Get Quoted</h3>
+                    <h1 className="mt-0 quote-header">{header}</h1>
+                    <h3 className="mt-0 quote-subheader">Click and Get Quoted</h3>
                     
                 </Row>
                 </a>

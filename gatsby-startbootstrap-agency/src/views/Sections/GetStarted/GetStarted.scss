@@ -1,56 +1,81 @@
-@-webkit-keyframes bounce {
-    0% { transform: translateY(-5px)  }
-    50% { transform: translateY(10px) }
-    100% { transform: translateY(-5px) }
-}
 
-@keyframes bounce {
-    0% { transform: translateY(-5px)  }
-    50% { transform: translateY(10px) }
-    100% { transform: translateY(-5px) }
-}
-
-#bounce {
-    width: 400px;
-    height: 400px;
-    background-color: #212529;
-    border-radius: 100%;
-    margin: 0% auto;
+.bubbleText{
+    background-color: #fed136;
+    text-align: center;
+    border-color: #42413d;
+    border: 4px solid;
     
-    -webkit-animation: bounce 3s infinite ease-in-out;
-    -o-animation: bounce 3s infinite ease-in-out;
-    -ms-animation: bounce 3s infinite ease-in-out; 
-    -moz-animation: bounce 3s infinite ease-in-out; 
-    animation: bounce 3s infinite ease-in-out;
-}
 
+}
+.quote-header{
+    box-shadow: 0px 8px 1px 1px rgba(0, 0, 255, .2);
+    padding: 1.2em;
+    border-radius: 100%;
+    background-color: #fed136;
+}
+.quote-subheader{
+    padding-top: 14px;
+}
 .linkToModal{
-    text-decoration: none;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
+  color: #42413D;
+}   
 
-.linkToModal:hover {
-    text-decoration: none;
-}
 
-@media only screen and (max-width: 500px) {
-    #bounce {
-        width: 100%;
-        height: 100%;
-        border-radius: 0%;
+@media only screen and (min-width: 500px) {
+    @-webkit-keyframes bounce {
+        0% { transform: translateY(-5px)  }
+        50% { transform: translateY(10px) }
+        100% { transform: translateY(-5px) }
     }
-
+    
+    @keyframes bounce {
+        0% { transform: translateY(-5px)  }
+        50% { transform: translateY(10px) }
+        100% { transform: translateY(-5px) }
+    }
+    
+    #bounce {
+        width: 400px;
+        height: 400px;
+        background-color: #212529;
+        border-radius: 100%;
+        margin: 0% auto;
+        
+        -webkit-animation: bounce 3s infinite ease-in-out;
+        -o-animation: bounce 3s infinite ease-in-out;
+        -ms-animation: bounce 3s infinite ease-in-out; 
+        -moz-animation: bounce 3s infinite ease-in-out; 
+        animation: bounce 3s infinite ease-in-out;
+    }
+    
     .linkToModal{
-        color: #42413D
+        color: #fed136;
+        text-decoration: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .linkToModal:hover {
+        text-decoration: none;
     }
     .bubbleText{
         border-color: #42413d;
         border: 4px solid;
         
-
+    
     }
+    .quote-header{
+        box-shadow: none;
+        padding: 0em;
+        border-radius: 0%;
+        background-color: transparent;
+    }
+    .quote-subheader{
+        padding-top: 0px;
+    }
+    
+
     
   }
   
