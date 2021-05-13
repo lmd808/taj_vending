@@ -60,7 +60,7 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
           {extraItems}
         </Navbar.Collapse>
           <div id= "phone-div"smooth="easeInOutQuart">
-              <a  href= "tel:6092408310" className="text-center text-uppercase" id='phone-call-icon'><Icon className="phoneIcon" iconName="PhoneIcon" size="lg" color= 'rgba(255, 255, 255, 0.5)'/>  Call Now!  </a>
+              <a  href= "tel:6095800586" className="text-center text-uppercase" id='phone-call-icon'><Icon className="phoneIcon" iconName="PhoneIcon" size="lg" color= 'rgba(255, 255, 255, 0.5)'/>  Call Now!  </a>
           </div>
       
     

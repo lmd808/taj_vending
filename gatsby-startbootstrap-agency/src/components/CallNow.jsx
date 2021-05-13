@@ -11,7 +11,7 @@ const CallNow = () => {
         className="nav-link text-center"
         smooth="easeInOutQuart"
       >
-        <a  href= "tel:9734458993" className="text-center text-uppercase"><Icon className="phoneIcon" iconName="PhoneIcon" size="lg" color= 'rgba(255, 255, 255, 0.5)'/>  Call Now!  </a>
+        <a  href= "tel:6095800586" className="text-center text-uppercase"><Icon className="phoneIcon" iconName="PhoneIcon" size="lg" color= 'rgba(255, 255, 255, 0.5)'/>  Call Now!  </a>
       </Row>
     </Container>
   );

@@ -1,5 +1,5 @@
 ---
 brand: "Taj Vending Services"
 menuText: "Menu"
-telephone: "6092408310"
+telephone: "6095800586"
 ---
