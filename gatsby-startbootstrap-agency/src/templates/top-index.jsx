@@ -70,7 +70,7 @@ const IndexPage = ({ data, pathContext: { langKey, defaultLang } }) => {
   } = data;
 
   const { topNode, navBarNode, anchors, footerNode, sectionsNodes } = breakDownAllNodes(nodes);
-  
+  // language key selector- work on removing 
   return (
     <>
       <SEO lang={langKey} defaultLang= {defaultLang} title="Top" keywords={keywords} description={description} />
