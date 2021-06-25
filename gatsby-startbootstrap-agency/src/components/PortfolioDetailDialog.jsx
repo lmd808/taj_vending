@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Modal, Button, Row, Col } from "react-bootstrap";
-
+import ThankYou from "./ThankYou"
 import './portfoliodetaildialog.scss'
 
 
@@ -12,19 +12,26 @@ function encode(data) {
     .join('&')
 }
 
-const QuoteDetailDialog = ({
+function  QuoteDetailDialog ({
   onHide,
-  ...restProps
-
-}) => {
+  ...restProps})  {
   const [state, setState] = React.useState({})
+  const [submit, setSubmit] = React.useState(false)
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
+  const handleMaskChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+    const x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+      e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');  
+}
   const thankYou = ()=> {
-    onHide()
+    setSubmit(true)
+    setTimeout(() => {
+      onHide()
+    }, 2000);
   }
 
   const handleSubmit = (e) => {
@@ -41,7 +48,7 @@ const QuoteDetailDialog = ({
       .then(() => thankYou())
       .catch((error) => error)
   }
-
+if (submit === false){
    return (
     <Modal
       {...restProps}
@@ -129,7 +136,7 @@ const QuoteDetailDialog = ({
           </label>
           <label className= "form-input">
             Phone Number: (No Dashes) 
-          <input type="tel" name="phone" placeholder="000-000-0000"  pattern="[0-9]{3}[0-9]{3}[0-9]{4}" className="form-input-size" onChange={handleChange} required/>
+          <input type="tel" name="phone" placeholder="000-000-0000" className="form-input-size" onChange={handleMaskChange} required/>
           </label>
       <hr/>
         <h6>How can we help you?</h6>
@@ -147,8 +154,40 @@ const QuoteDetailDialog = ({
         <small><em>All calls and emails will receive a response within 24 hours.</em></small>
         </div>
       </Modal.Footer>
-    </Modal>
-  ) 
+    </Modal>)
+  } 
+  
+  if (submit === true) {
+    return(
+      <Modal
+      {...restProps}
+      onHide={onHide}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">Thanks! </Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="mx-auto">  
+      <Row className= "text-center">
+        <Col/>
+        <Col sm={10}>
+          <ThankYou/>      
+        </Col>
+        <Col/>
+      </Row>
+      <hr/>
+       
+      </Modal.Body>
+      <Modal.Footer>
+        <div className="mx-auto">
+        <small><em>All calls and emails will receive a response within 24 hours.</em></small>
+        </div>
+      </Modal.Footer>
+    </Modal>)
+    
+  } 
 };
 
 QuoteDetailDialog.propTypes = {
